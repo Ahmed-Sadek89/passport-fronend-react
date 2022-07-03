@@ -1,0 +1,9 @@
+.footer{
+    @apply py-3 bg-main text-white;
+}
+.footer .content{
+    @apply flex flex-col items-center
+}
+.footer .content a{
+    @apply duration-300  ease-in hover:font-bold
+}

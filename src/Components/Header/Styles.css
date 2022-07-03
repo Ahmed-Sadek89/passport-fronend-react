@@ -1,0 +1,18 @@
+.header{
+    @apply py-3 bg-main text-white;
+}
+.header .layout{
+    @apply flex justify-around flex-col md:flex-row items-start md:items-center
+}
+.left{
+    @apply cursor-pointer text-lg font-bold flex-1
+}
+.right{
+    
+}
+.right ul{
+    @apply flex flex-col md:flex-row my-4 md:my-0 
+}
+li{
+    @apply cursor-pointer mx-0 md:mx-4 my-1 md:my-0 
+}

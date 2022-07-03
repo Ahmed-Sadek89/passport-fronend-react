@@ -1,0 +1,15 @@
+.postImg{
+    @apply h-96 overflow-hidden
+}
+.postImg img{
+    @apply w-full h-full object-cover
+}
+.onepost_content{
+    @apply py-5
+}
+.onepost_content h1{
+    @apply text-lg font-bold text-center mb-4
+}
+.onepost_content .postDesc{
+    @apply text-gray-400 mb-4
+}

@@ -1,0 +1,21 @@
+.homepage{
+    @apply py-5 h-auto md:h-screen;
+}
+.homepage .home_content{
+    @apply flex flex-col justify-between md:flex-row mt-5
+}
+.homepage .home_content .post_content{
+    @apply flex shadow-2xl mr-0 md:mr-3 p-3 items-start rounded-md flex-col
+}
+.post_content h1{
+    @apply font-bold text-base mt-2
+}
+.post_content img{
+    @apply h-4/6 my-3
+}
+.post_content p{
+    @apply text-gray-500 mb-3
+}
+.post_content .button{
+    @apply text-white bg-main px-2 py-1 rounded-md
+}

@@ -1,0 +1,54 @@
+.login{
+    @apply py-2 h-screen flex justify-center items-center;
+}
+.login .login_layout{
+    @apply shadow-2xl px-10 py-5 w-full md:w-10/12 overflow-hidden;
+}
+.login .login_layout h1{
+    @apply text-center text-base font-bold text-gray-300 text-2xl
+}
+.login .login_layout .login_content{
+ @apply flex flex-col md:flex-row-reverse justify-between gap-10 my-12 items-center
+}
+.login_content .login_social, .login_content .login_manual{
+    @apply flex flex-col flex-1
+}
+.login_content .login_social{
+    @apply flex flex-row md:flex-col
+}
+.login_content .login_social button{
+    @apply w-full flex flex-row items-center justify-center
+    bg-gray-500 text-white my-2 mx-1 md:mx-0 
+    rounded-md py-2 pl-2 md:pl-5 pr-2 md:pr-12
+}
+.login_social button span{
+    @apply font-bold ml-3 hidden md:block 
+}
+.login_content .login_social .google{
+    @apply bg-google;
+}
+.login_content .login_social .facebook{
+    @apply bg-facebook;
+}
+.login_content .login_social .github{
+    @apply bg-github
+}
+.login_separetor{
+    @apply mx-10 relative uppercase flex items-center justify-center
+}
+.login_separetor .divider{
+    @apply bg-gray-300 w-60 md:w-0.5 h-0.5 md:h-60 z-10 
+}
+.login_separetor span{
+    @apply z-20 absolute bg-white text-black p-1 rounded-2xl border-dotted border-2 border-main
+}
+.login_manual input{
+    border-width: 1px;
+    @apply border-solid border-input mb-4 py-2 pl-2 pr-5 md:pr-12 rounded-md outline-none w-full
+}
+.login_manual .button{
+    @apply flex justify-center
+}
+.login_manual .button button{
+    @apply bg-main text-white py-2 rounded-md w-3/4
+}
