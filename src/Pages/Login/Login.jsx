@@ -10,7 +10,7 @@ const Login = () => {
     console.log('i am Login page');
     
     const google = () => {
-        window.open("https://file-api-sadek.herokuapp.com/auth/google", "_self");
+        window.open("https://file-api-sadek.herokuapp.com/auth/google/", "_self");
     };
     return (
         <Layout>
