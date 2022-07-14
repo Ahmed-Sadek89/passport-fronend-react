@@ -9,6 +9,7 @@ const App = () => {
   const [ user, setUser ] = useState(null);
   useEffect(() => {
     const getUser = async() => {
+      // https://file-api-sadek.herokuapp.com/auth/logout
       await fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
         method: "GET",
         credentials: "include",
