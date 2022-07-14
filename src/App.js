@@ -24,7 +24,9 @@ const App = () => {
       //     "Access-Control-Allow-Credentials": true,
       //   },
       // })
-      axios.get("https://file-api-sadek.herokuapp.com/auth/login/success")
+      axios.get("https://file-api-sadek.herokuapp.com/auth/login/success", {
+        credentials: "include",
+      })
         // .then((response) => {
         //   if (response.status === 200) return response.json();
         //   throw new Error("authentication has been failed!");
