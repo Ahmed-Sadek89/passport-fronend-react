@@ -11,8 +11,14 @@
     
 }
 .right ul{
-    @apply flex flex-col md:flex-row my-4 md:my-0 
+    @apply flex flex-col md:flex-row my-4 md:my-0 items-center
 }
 li{
-    @apply cursor-pointer mx-0 md:mx-4 my-1 md:my-0 
+    @apply my-1 md:my-0 mx-0 md:mx-2 font-medium
+}
+li img{
+    @apply h-12 rounded-3xl
+}
+ul .logout{
+    @apply cursor-pointer
 }

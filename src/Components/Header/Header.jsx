@@ -2,9 +2,14 @@ import { memo } from 'react'
 import './Styles.css'
 import {Link} from 'react-router-dom';
 
-const Header = () => {
-    const user = false
+const Header = ({user}) => {
+    
     console.log('i am header component');
+    console.log(user);
+    const logout = () => {
+        window.open('https://file-api-sadek.herokuapp.com/auth/logout', '_self')
+        //window.open('http://localhost:5000/auth/logout', '_self')
+    }
     return (
         <div className='header'>
             <div className='container layout'>
@@ -17,13 +22,15 @@ const Header = () => {
                             user ? 
                             <>
                                 <li>
-                                    img
+                                    <div>
+                                        <img src={user?.thumbnail} alt={user?.username} />
+                                    </div>
                                 </li>
                                 <li>
-                                    Sadek test
+                                    {user?.username}
                                 </li>
-                                <li>
-                                    logot
+                                <li className='logout' onClick={logout}>
+                                    logout
                                 </li>
                             </>
                                 :

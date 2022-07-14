@@ -5,13 +5,13 @@ import Layout from '../../Components/Layout/Layout';
 import { useLocation } from 'react-router-dom'
 import './Styles.css'
 
-const Post = () => {
+const Post = ({user}) => {
     console.log('i am Post page');
     const location = useLocation()
     const postNumber = parseInt(location.pathname.split('/')[2]);
     const post = posts.find(i => i.id === postNumber );
     return (
-        <Layout>
+        <Layout user={user}>
             <div>
                 <div className='postImg'>
                     <img src={post.img} alt={post.title} />

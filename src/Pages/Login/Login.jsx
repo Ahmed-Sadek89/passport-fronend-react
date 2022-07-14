@@ -6,14 +6,21 @@ import Github from '../../Assets/Images/github.png';
 import { memo } from 'react';
 
 
-const Login = () => {
+const Login = ({user}) => {
     console.log('i am Login page');
     
     const google = () => {
         window.open("https://file-api-sadek.herokuapp.com/auth/google/", "_self");
     };
+    const github = () => {
+        window.open("https://file-api-sadek.herokuapp.com/auth/github/", "_self");
+    };
+    const facebook = () => {
+        window.open("https://file-api-sadek.herokuapp.com/auth/facebook/", "_self");
+    };
+    
     return (
-        <Layout>
+        <Layout user={user}>
             <div className='container login'>
                 <div className='login_layout'>
                     <h1>choose a login method</h1>
@@ -36,11 +43,11 @@ const Login = () => {
                                 <img src={Google} alt='Google' />
                                 <span>Google</span>
                             </button>
-                            <button className='facebook'>
+                            <button className='facebook' onClick={facebook}>
                                 <img src={Facebook} alt='Facebook' />
                                 <span>Facebook</span>
                             </button>
-                            <button className='github'>
+                            <button className='github' onClick={github}>
                                 <img src={Github} alt='Github' />
                                 <span>Github</span>
                             </button>

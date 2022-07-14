@@ -3,10 +3,11 @@ import {posts} from '../../Assets/env'
 import { Link } from 'react-router-dom'
 import './Styles.css'
 
-const Home = () => {
+const Home = ({user}) => {
   console.log('i am Home page');
+  
   return (
-    <Layout>
+    <Layout user={user}>
         <div className='homepage'>
             <div className='container home_content'>
                 {
