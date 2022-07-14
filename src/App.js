@@ -8,18 +8,18 @@ const App = () => {
  
   const [ user, setUser ] = useState(null);
   useEffect(() => {
-    const getUser = async() => {
+    const getUser = () => {
       // https://file-api-sadek.herokuapp.com/auth/logout
       // https://file-api-sadek.herokuapp.com/auth/login/success
       // http://localhost:5000/auth/login/success
-      await fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-        method: "GET"
-        // credentials: "include",
-        // headers: {
-        //   Accept: "application/json",
-        //   "Content-Type": "application/json",
-        //   "Access-Control-Allow-Credentials": true,
-        // },
+       fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
       })
         .then((response) => {
           if (response.status === 200) return response.json();
