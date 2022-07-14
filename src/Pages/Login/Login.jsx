@@ -10,10 +10,10 @@ const Login = ({user}) => {
     console.log('i am Login page');
     
     const google = () => {
-        window.open("https://file-api-sadek.herokuapp.com/auth/google/", "_self");
+        window.open("http://localhost:5000/auth/google/", "_self");
     };
     const github = () => {
-        window.open("https://file-api-sadek.herokuapp.com/auth/github/", "_self");
+        window.open("http://localhost:5000/auth/github/", "_self");
     };
     const facebook = () => {
         window.open("https://file-api-sadek.herokuapp.com/auth/facebook/", "_self");
