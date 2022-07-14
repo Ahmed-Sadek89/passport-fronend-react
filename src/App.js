@@ -10,8 +10,11 @@ const App = () => {
   useEffect(() => {
     const getUser = async() => {
       // https://file-api-sadek.herokuapp.com/auth/logout
+      // https://file-api-sadek.herokuapp.com/auth/login/success
+      // http://localhost:5000/auth/login/success
       await fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
         method: "GET",
+        mode: "no-cors",
         credentials: "include",
         headers: {
           Accept: "application/json",
@@ -27,7 +30,7 @@ const App = () => {
           setUser(resObject.user);
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.message);
         });
     };
     getUser();
