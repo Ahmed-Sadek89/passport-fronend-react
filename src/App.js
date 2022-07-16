@@ -35,7 +35,7 @@ const App = () => {
     // };
     const getUser = async () => {
       await axios.get('https://file-api-sadek.herokuapp.com/auth/login/success')
-      .then(res => console.log(res.data.user))
+      .then(res => console.log(res.data))
       .catch(err => console.log(err))
     }
     // const getCors = async () => {
