@@ -16,12 +16,12 @@
 .login_content .login_social{
     @apply flex flex-row md:flex-col
 }
-.login_content .login_social button{
+.login_content .login_social a{
     @apply w-full flex flex-row items-center justify-center
     bg-gray-500 text-white my-2 mx-1 md:mx-0 
     rounded-md py-2 pl-2 md:pl-5 pr-2 md:pr-12
 }
-.login_social button span{
+.login_social a span{
     @apply font-bold ml-3 hidden md:block 
 }
 .login_content .login_social .google{

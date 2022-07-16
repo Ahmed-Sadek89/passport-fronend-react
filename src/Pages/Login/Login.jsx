@@ -9,16 +9,16 @@ import { memo } from 'react';
 const Login = ({user}) => {
     console.log('i am Login page');
     
-    const google = () => {//http://localhost:5000/auth/google/
-        //https://file-api-sadek.herokuapp.com/auth/google/
-        window.open("https://file-api-sadek.herokuapp.com/auth/google/", "_self");
-    };
-    const github = () => {
-        window.open("https://file-api-sadek.herokuapp.com/auth/github/", "_self");
-    };
-    const facebook = () => {
-        window.open("https://file-api-sadek.herokuapp.com/auth/facebook/", "_self");
-    };
+    // const google = () => {//http://localhost:5000/auth/google/
+    //     //https://file-api-sadek.herokuapp.com/auth/google/
+    //     window.open("https://file-api-sadek.herokuapp.com/auth/google/", "_self");
+    // };
+    // const github = () => {
+    //     window.open("https://file-api-sadek.herokuapp.com/auth/github/", "_self");
+    // };
+    // const facebook = () => {
+    //     window.open("https://file-api-sadek.herokuapp.com/auth/facebook/", "_self");
+    // };
     
     return (
         <Layout user={user}>
@@ -40,18 +40,18 @@ const Login = ({user}) => {
                             <span>or</span>
                         </div>
                         <div className='login_social'>
-                            <button className='google' onClick={google}>
+                            <a className='google' href="https://file-api-sadek.herokuapp.com/auth/google/" >
                                 <img src={Google} alt='Google' />
                                 <span>Google</span>
-                            </button>
-                            <button className='facebook' onClick={facebook}>
+                            </a>
+                            <a className='facebook' href="https://file-api-sadek.herokuapp.com/auth/facebook/">
                                 <img src={Facebook} alt='Facebook' />
                                 <span>Facebook</span>
-                            </button>
-                            <button className='github' onClick={github}>
+                            </a>
+                            <a className='github' href="https://file-api-sadek.herokuapp.com/auth/github/" >
                                 <img src={Github} alt='Github' />
                                 <span>Github</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                     
