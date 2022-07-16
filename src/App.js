@@ -37,6 +37,7 @@ const App = () => {
       await axios.get('https://file-api-sadek.herokuapp.com/auth/login/success', {
         headers: {
           "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
         }
       })
       .then(res => setUser(res.data.user))
