@@ -9,29 +9,34 @@ const App = () => {
  
   const [ user, setUser ] = useState(null);
   useEffect(() => {
-    const getUser = () => {
-      // https://file-api-sadek.herokuapp.com/auth/logout
-      // https://file-api-sadek.herokuapp.com/auth/login/success
-      // http://localhost:5000/auth/login/success
-       fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-        method: "GET",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
+    // const getUser = () => {
+    //   // https://file-api-sadek.herokuapp.com/auth/logout
+    //   // https://file-api-sadek.herokuapp.com/auth/login/success
+    //   // http://localhost:5000/auth/login/success
+    //    fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
+    //     method: "GET",
+    //     headers: {
+    //       "Accept": "application/json",
+    //       "Content-Type": "application/json",
+    //       "Access-Control-Allow-Origin": "*",
+    //     },
+    //   })
+    //     .then((response) => {
+    //       if (response.status === 200) return response.json();
+    //       throw new Error("authentication has been failed!");
+    //     })
+    //     .then((resObject) => {
+    //       setUser(resObject.user);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // };
+    const getUser = async () => {
+      await axios.get('https://file-api-sadek.herokuapp.com/auth/login/success')
+      .then(res => setUser(res.data.user))
+      .catch(err => console.log(err))
+    }
     getUser();
   }, []);
 
