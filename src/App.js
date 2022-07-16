@@ -16,7 +16,6 @@ const App = () => {
        fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
         method: "GET",
         credentials: "include",
-        mode: "no-cors",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
