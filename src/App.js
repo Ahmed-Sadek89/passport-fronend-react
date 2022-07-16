@@ -19,7 +19,6 @@ const App = () => {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          'Access-Control-Allow-Origin': "https://passport-fronend-react.vercel.app",
           "Access-Control-Allow-Credentials": true,
         },
       })
