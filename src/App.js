@@ -10,35 +10,37 @@ const App = () => {
  
   const [ user, setUser ] = useState(null);
   useEffect(() => {
-    const getUser = () => {
-      // https://file-api-sadek.herokuapp.com/auth/logout
-      // https://file-api-sadek.herokuapp.com/auth/login/success
-      // http://localhost:5000/auth/login/success
-       fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    // const getUser = async () => {
-    //   await axios.get('https://file-api-sadek.herokuapp.com/auth/login/success')
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err))
-    // }
+    // const getUser = () => {
+    //   // https://file-api-sadek.herokuapp.com/auth/logout
+    //   // https://file-api-sadek.herokuapp.com/auth/login/success
+    //   // http://localhost:5000/auth/login/success
+    //    fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
+    //     method: "GET",
+    //     headers: {
+    //       "Accept": "application/json",
+    //       "Content-Type": "application/json",
+    //       "Access-Control-Allow-Origin": "*",
+    //       "Access-Control-Allow-Credentials": true,
+    //     },
+    //   })
+    //     .then((response) => {
+    //       if (response.status === 200) return response.json();
+    //       throw new Error("authentication has been failed!");
+    //     })
+    //     .then((resObject) => {
+    //       setUser(resObject.user);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // };
+     const getUser = async () => {
+       await axios.get('https://file-api-sadek.herokuapp.com/auth/login/success',{
+        withCredentials: true
+    })
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err))
+    }
     // const getCors = async () => {
     //   await axios.get('https://file-api-sadek.herokuapp.com/', {
     //     headers: {
