@@ -39,7 +39,7 @@ const App = () => {
           "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
         }
       })
-      .then(res => setUser(res.data.user))
+      .then(res => setUser(res.data.auth))
       .catch(err => console.log(err))
     }
     // const getCors = async () => {
