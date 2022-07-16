@@ -34,7 +34,7 @@ const App = () => {
     //     });
     // };
     const getUser = async () => {
-      await axios.get('https://file-api-sadek.herokuapp.com/auth/login/success', {
+      await axios.get('https://file-api-sadek.herokuapp.com/', {
         headers: {
           "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
         }
