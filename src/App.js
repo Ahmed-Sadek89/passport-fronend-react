@@ -1,6 +1,7 @@
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Post from "./Pages/Post/Post";
+import axios from 'axios'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from "react";
 
