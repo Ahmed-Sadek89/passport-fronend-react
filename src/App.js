@@ -42,6 +42,16 @@ const App = () => {
       .then(res => setUser(res.data.user))
       .catch(err => console.log(err))
     }
+    const getCors = async () => {
+      await axios.get('https://file-api-sadek.herokuapp.com/', {
+        headers: {
+          "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+        }
+      })
+      .then(res => setUser(res.data.user))
+      .catch(err => console.log(err))
+    }
+    getCors()
     getUser();
   }, []);
 
