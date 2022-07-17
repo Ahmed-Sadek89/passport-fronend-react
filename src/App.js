@@ -3,27 +3,29 @@ import Login from "./Pages/Login/Login";
 import Post from "./Pages/Post/Post";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from "react";
-
+import axios from "axios"
 
 const App = () => {
  
   const [ user, setUser ] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-        method: "GET",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
+      // fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
+      //   method: "GET",
+      //   headers: {
+      //     "Accept": "application/json",
+      //     "Content-Type": "application/json",
+          
+      //   },
+      // })
+      //   .then((response) => {
+      //     if (response.status === 200) return response.json();
+      //     throw new Error("authentication has been failed!");
+      //   })
+        axios.get("https://file-api-sadek.herokuapp.com/auth/login/success")
         .then((resObject) => {
-          setUser(resObject.user);
+          console.log(resObject.data);
+          setUser(resObject.data);
         })
         .catch((err) => {
           console.log(err);
