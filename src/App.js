@@ -10,16 +10,19 @@ const App = () => {
   const [ user, setUser ] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "https://passport-fronend-react.vercel.app",
-        },
-      })
+      const proxyurl = "https://file-api-sadek.herokuapp.com/auth/login/success";
+      const url = 'https://api.liveconnect.in/backend/web/erpsync/get-all-orders?data=dbCode=UAT04M%7Cidx=100%7CuserId=6214%7Cres_format=1'; // site that doesn’t send Access-Control-*
+      fetch(proxyurl + url)
+      // fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
+      //   method: "GET",
+      //   credentials: "include",
+      //   headers: {
+      //     "Accept": "application/json",
+      //     "Content-Type": "application/json",
+      //     "Access-Control-Allow-Credentials": true,
+      //     "Access-Control-Allow-Origin": "https://passport-fronend-react.vercel.app",
+      //   },
+      // })
         .then((response) => {
           if (response.status === 200) return response.json();
           throw new Error("authentication has been failed!");
