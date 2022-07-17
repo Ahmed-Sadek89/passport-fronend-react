@@ -12,7 +12,7 @@ const App = () => {
     const getUser = () => {
       fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
         method: "GET",
-        credentials: "include",
+        credentials: "same-origin",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
