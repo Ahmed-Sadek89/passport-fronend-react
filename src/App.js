@@ -11,7 +11,11 @@ const App = () => {
   useEffect(() => {
     const getUser = () => {
       const proxyurl = "https://file-api-sadek.herokuapp.com/auth/login/success";
-      fetch(proxyurl)
+      fetch(proxyurl,{
+        method: "GET",
+        credentials: "include",
+        mode: "no-cors"
+      })
       // fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
       //   method: "GET",
       //   credentials: "include",
