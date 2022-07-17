@@ -10,23 +10,20 @@ const App = () => {
   const [ user, setUser ] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      const proxyurl = "https://file-api-sadek.herokuapp.com/auth/login/success";
-      fetch(proxyurl,{
+      fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
         method: "GET",
         credentials: "include",
-        mode: "no-cors"
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Origin": "https://passport-fronend-react.vercel.app",
+        },
       })
-      // fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-      //   method: "GET",
-      //   credentials: "include",
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //     "Access-Control-Allow-Origin": "https://passport-fronend-react.vercel.app",
-      //   },
-      // })
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
         .then((resObject) => {
           setUser(resObject.user);
         })
