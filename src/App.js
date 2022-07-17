@@ -11,8 +11,7 @@ const App = () => {
   useEffect(() => {
     const getUser = () => {
       const proxyurl = "https://file-api-sadek.herokuapp.com/auth/login/success";
-      const url = 'https://api.liveconnect.in/backend/web/erpsync/get-all-orders?data=dbCode=UAT04M%7Cidx=100%7CuserId=6214%7Cres_format=1'; // site that doesn’t send Access-Control-*
-      fetch(proxyurl + url)
+      fetch(proxyurl)
       // fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
       //   method: "GET",
       //   credentials: "include",
