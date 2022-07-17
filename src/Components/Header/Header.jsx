@@ -23,11 +23,11 @@ const Header = ({user}) => {
                             <>
                                 <li>
                                     <div>
-                                        <img src={user?.thumbnail} alt={user?.username} />
+                                        <img src={user?._json.picture} alt={user?.displayName} />
                                     </div>
                                 </li>
                                 <li>
-                                    {user?.username}
+                                    {user?.displayName}
                                 </li>
                                 <li className='logout' onClick={logout}>
                                     logout
