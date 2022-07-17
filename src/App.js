@@ -22,7 +22,13 @@ const App = () => {
       //     if (response.status === 200) return response.json();
       //     throw new Error("authentication has been failed!");
       //   })
-        axios.get("https://file-api-sadek.herokuapp.com/auth/login/success")
+        axios.get("https://file-api-sadek.herokuapp.com/auth/login/success", {
+            headers: {
+              "Accept": "application/json",
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+        })
         .then((resObject) => {
           console.log(resObject.data);
           setUser(resObject.data);
