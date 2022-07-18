@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import setCookie from "./Hooks/useSetCookie";
 import getCookie from "./Hooks/useGetCookie";
 import deleteCookie from "./Hooks/useDeleteCookie";
-
+import axios from 'axios'
 
 const App = () => {
   console.log(getCookie('userId'))
@@ -14,38 +14,15 @@ const App = () => {
   const isAuth = getCookie('userId');
   const [ user, setUser ] = useState(null);
   useEffect(() => {
-    const getUser = () => {
-      fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
-        .then( (res) => {
-          console.log(res);
-          const { user } = res
-          const {userId} = user[0]
-          if ( user.length > 0 ) { 
-            console.log(user?.username);
-            setCookie('userId', JSON.stringify(userId))
-            setUser(...user);
-          } else {
-            deleteCookie('userId');
-            setUser([]);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
     
+    const getUser = () => {
+      axios.get("https://file-api-sadek.herokuapp.com/auth/login/success", { withCredentials: true }).then((res) => {
+            console.log(res);
+            if (res.data) {
+                setUser(res.data.user2);
+            }
+        })
+    }
     getUser()
    
   }, []);
