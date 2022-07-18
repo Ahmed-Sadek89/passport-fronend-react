@@ -1,16 +1,12 @@
 import { memo } from 'react'
 import './Styles.css'
 import {Link} from 'react-router-dom';
-import getCookie from '../../Hooks/useGetCookie';
-import deleteCookie from '../../Hooks/useDeleteCookie';
 
 const Header = ({user}) => {
-    const isAuth = getCookie('userId');
     console.log('i am header component');
     console.log(user);
     const logout = () => {
-        deleteCookie('userId');
-         window.open('https://file-api-sadek.herokuapp.com/auth/logout', '_self')
+        window.open('https://file-api-sadek.herokuapp.com/auth/logout', '_self')
         //window.open('http://localhost:5000/auth/logout', '_self')
     }
     return (
