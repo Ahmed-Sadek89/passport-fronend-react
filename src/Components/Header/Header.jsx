@@ -22,7 +22,7 @@ const Header = ({user}) => {
                 <div className='right'>
                     <ul>
                         {
-                            (isAuth) ? 
+                            (user) ? 
                             <>
                                 <li>
                                     <div>
