@@ -16,7 +16,7 @@ const App = () => {
       })
       .then(({data}) => {
         console.log(data);
-        if (res.data) {
+        if (data) {
           setUser(data.user2);
         }
       }).catch(err => {
