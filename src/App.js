@@ -3,39 +3,30 @@ import Login from "./Pages/Login/Login";
 import Post from "./Pages/Post/Post";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from "react";
-import axios from "axios"
 
 const App = () => {
  
   const [ user, setUser ] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      // fetch("https://file-api-sadek.herokuapp.com/auth/login/success", {
-      //   method: "GET",
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-          
-      //   },
-      // })
-      //   .then((response) => {
-      //     if (response.status === 200) return response.json();
-      //     throw new Error("authentication has been failed!");
-      //   })
-        axios.get("https://file-api-sadek.herokuapp.com/auth/login/success", {
-            headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
-            },
-        })
-        .then((resObject) => {
-          console.log(resObject.data);
-          setUser(resObject.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      fetch("http://localhost:5000/auth/login/success", {
+        method: "GET",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) return response.json();
+        throw new Error("authentication has been failed!");
+      })
+      .then(({user}) => {
+        console.log(...user);
+        setUser(...user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     };
   
    getUser()
@@ -47,10 +38,10 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home user={user}/>} />
         <Route path='/login' element={
-          user ? <Navigate to='/' /> : <Login  user={user}/>
+          <Login  user={user}/>
         }/>
         <Route path='/post/:id' element={
-          user ? <Post  user={user}/> : <Navigate to='/login' />
+          <Post  user={user}/>
         }/>
       </Routes>
     </BrowserRouter>

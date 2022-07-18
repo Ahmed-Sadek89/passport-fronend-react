@@ -7,8 +7,8 @@ const Header = ({user}) => {
     console.log('i am header component');
     console.log(user);
     const logout = () => {
-        window.open('https://file-api-sadek.herokuapp.com/auth/logout', '_self')
-        //window.open('http://localhost:5000/auth/logout', '_self')
+        //window.open('https://file-api-sadek.herokuapp.com/auth/logout', '_self')
+        window.open('http://localhost:5000/auth/logout', '_self')
     }
     return (
         <div className='header'>
@@ -19,25 +19,25 @@ const Header = ({user}) => {
                 <div className='right'>
                     <ul>
                         {
-                            user ? 
+                            // user ? 
                             <>
                                 <li>
                                     <div>
-                                        <img src={user?._json.picture} alt={user?.displayName} />
+                                        <img src={user?.thumbnail} alt={user?.username} />
                                     </div>
                                 </li>
                                 <li>
-                                    {user?.displayName}
+                                    {user?.username}
                                 </li>
                                 <li className='logout' onClick={logout}>
                                     logout
                                 </li>
-                            </>
-                                :
+                            {/* </> */}
+                                {/* : */}
                             <li>
                                 <Link to='/login'>login</Link>
                             </li>
-                            
+                            </>
                         }
                     </ul>
                 </div>
