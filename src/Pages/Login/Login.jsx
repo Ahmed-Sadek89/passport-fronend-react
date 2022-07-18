@@ -40,7 +40,7 @@ const Login = ({user}) => {
                             <span>or</span>
                         </div>
                         <div className='login_social'>
-                            <a className='google' href="http://localhost:5000/auth/google/" >
+                            <a className='google' href="https://file-api-sadek.herokuapp.com/auth/google/" >
                                 <img src={Google} alt='Google' />
                                 <span>Google</span>
                             </a>
