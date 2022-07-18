@@ -1,13 +1,16 @@
 import { memo } from 'react'
 import './Styles.css'
 import {Link} from 'react-router-dom';
+import getCookie from '../../Hooks/useGetCookie';
+import deleteCookie from '../../Hooks/useDeleteCookie';
 
 const Header = ({user}) => {
-    
+    const isAuth = getCookie('userId');
     console.log('i am header component');
     console.log(user);
     const logout = () => {
-        window.open('https://file-api-sadek.herokuapp.com/auth/logout', '_self')
+        deleteCookie('userId');
+         window.open('https://file-api-sadek.herokuapp.com/auth/logout', '_self')
         //window.open('http://localhost:5000/auth/logout', '_self')
     }
     return (
@@ -19,7 +22,7 @@ const Header = ({user}) => {
                 <div className='right'>
                     <ul>
                         {
-                            // user ? 
+                            (isAuth) ? 
                             <>
                                 <li>
                                     <div>
@@ -32,12 +35,12 @@ const Header = ({user}) => {
                                 <li className='logout' onClick={logout}>
                                     logout
                                 </li>
-                            {/* </> */}
-                                {/* : */}
+                            </>
+                                :
                             <li>
                                 <Link to='/login'>login</Link>
                             </li>
-                            </>
+                            
                         }
                     </ul>
                 </div>

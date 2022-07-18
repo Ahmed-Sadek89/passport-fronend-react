@@ -8,7 +8,6 @@ import { memo } from 'react';
 
 const Login = ({user}) => {
     console.log('i am Login page');
-    
     // const google = () => {//http://localhost:5000/auth/google/
     //     //https://file-api-sadek.herokuapp.com/auth/google/
     //     window.open("https://file-api-sadek.herokuapp.com/auth/google/", "_self");
