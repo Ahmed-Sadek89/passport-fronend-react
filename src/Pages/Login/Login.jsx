@@ -28,15 +28,15 @@ const Login = ({user}) => {
                             <span>or</span>
                         </div>
                         <div className='login_social'>
-                            <a className='google' href="https://file-api-sadek.herokuapp.com/auth/google/" >
+                            <a className='google' href="https://simple-passportjs-app.onrender.com/auth/google/" >
                                 <img src={Google} alt='Google' />
                                 <span>Google</span>
                             </a>
-                            <a className='facebook' href="https://file-api-sadek.herokuapp.com/auth/facebook/">
+                            <a className='facebook' href="https://simple-passportjs-app.onrender.com/auth/facebook/">
                                 <img src={Facebook} alt='Facebook' />
                                 <span>Facebook</span>
                             </a>
-                            <a className='github' href="https://file-api-sadek.herokuapp.com/auth/github/" >
+                            <a className='github' href="https://simple-passportjs-app.onrender.com/auth/github/" >
                                 <img src={Github} alt='Github' />
                                 <span>Github</span>
                             </a>
